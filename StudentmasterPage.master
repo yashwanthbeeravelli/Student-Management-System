@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="StudentmasterPage.master.cs" Inherits="StudentmasterPage" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+   
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %>- My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script type ="text/javascript">
+        
+        function disableBackButton() {
+            window.history.forward();
+        }
+        setTimeout("disableBackButton()", 0);
+        </script>
+     
+    <style type="text/css">
+        .auto-style1 {
+            width: 123px;
+        }
+        .auto-style2 {
+            width: 123px;
+            height: 138px;
+        }
+        .auto-style3 {
+            height: 138px;
+        }
+    </style>
+
+</head>
+<body>
+<br />
+    <form runat="server">
+         
+        <table class="nav-justified">
+            <tr>
+                <td style="text-align: right" class="auto-style2">
+                    <asp:TreeView ID="TreeView1" runat="server" Width="133px">
+                        <Nodes>
+                            <asp:TreeNode Text="Academic" Value="Academic" Expanded="False">
+                                <asp:TreeNode NavigateUrl="~/Student/StudentCourseList.aspx" Text="Register Course" Value="Register Course"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/Student/DropCourses.aspx" Text="Drop Course" Value="Drop Course"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/Student/DESCCourse.aspx" Text="DISC Course" Value="DISC Course"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/Student/ViewRegisteredCourses.aspx" Text="Registered Courses" Value="View Registered Courses"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/Student/StudentViewProfile.aspx" Text="View Profile" Value="View Profile"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/Student/StudentRecord.aspx" Text="Student Record" Value="Student Record"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="Account Services" Value="Account Services" Expanded="False">
+                                <asp:TreeNode NavigateUrl="~/Student/ViewAccount.aspx" Text="View Account" Value="View Account"></asp:TreeNode>
+                            </asp:TreeNode>
+                        </Nodes>
+                    </asp:TreeView>
+                </td>
+                <td style="text-align: right" class="auto-style3">
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+               
+            </asp:ContentPlaceHolder>
+               
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right" class="auto-style1">
+                    &nbsp;</td>
+                <td style="text-align: right">
+
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: right" class="auto-style1">
+                    &nbsp;</td>
+                <td style="text-align: right">
+
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: right" class="auto-style1">
+                    &nbsp;</td>
+                <td style="text-align: right">
+
+                    &nbsp;</td>
+            </tr>
+        </table>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container1">
+                </div>
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" runat="server" href="~/">
+                    Online management&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnLogout" runat="server" Text="Log out" OnClick="btnLogout_Click" />
+                    </a>&nbsp;</div>
+                <div class="navbar-collapse collapse">
+                    <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label>
+                      
+                </div>
+            </div>
+        </div>
+    </form>
+                 <p>&copy; <%: Context.User.Identity.GetUserName()  %>- Yash App</p>
+            </body>
+</html>
