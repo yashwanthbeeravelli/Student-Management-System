@@ -1,0 +1,2 @@
+# Student-Management-System
+This is one of my project works in which I have developed this project named Student Management System. The theme of the project is to create a student portal in which the students can register for the courses, check their teachers, class schedules and also pay the fees based on the courses they have registered. I was developed in Visual Studio 2013, C#, ASP.Net, SQL Server 2012 and some Javascript functions. 
